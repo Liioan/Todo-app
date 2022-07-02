@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+*{
+    transition: all 0.2s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+body{
+    transition: all 0.2s ease-in-out;
+    background-color: #222222;
+    height: auto;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+form{
+    background-color: #333333;
+    width: 40vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+}
+
+.user-to-do{
+    width: 30vw;
+    text-align: center;
+    height: 5vh;
+    background-color: #333333;
+    border: 2px white solid;
+    border-radius: 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.user-to-do:focus{
+    outline: none; 
+}
+
+.submit-button{
+    width: 5vh;
+    height: 5vh;
+    background-color: #333333;
+    border: 2px white solid;
+    border-radius: 100px;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.submit-button:hover{
+    cursor: pointer;
+    border-color: aquamarine;
+    color: aquamarine;
+}
+
+
+.todos{
+    background-color: #333333;
+    width: 40vw;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    margin: 10px;
+    padding: 10px;
+    background-color: #444444;
+    list-style-type: none;
+    border-radius: 10px;
+}
+
+.todo{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+button{
+    margin: 5px;
+    width: 30px;
+    height: 30px;   
+    border-radius: 100px; 
+    background-color: #333333;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+button:hover{
+    color: crimson;
+    border: 1px crimson solid;
+}
+
+.valid:focus{
+    border-color:limegreen;
+    background-color: #272e25;
+    color: limegreen;
+}
+
+.error:focus{
+    border-color: crimson;
+    background-color: #2e2525;
+    color: crimson;
+}
+
+.hidden{
+    display: none;
+}
+
+.visable{
+    display: block;
+}
