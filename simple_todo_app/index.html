@@ -10,35 +10,57 @@
 <body>
     <div class="wrapper">
         <form>
-            <input type="text" placeholder="what would you like to do?" class="user-to-do error" id="userValue">
-            <input type="submit" value="+" class="submit-button">
+            <div class="inputs">
+                <input type="text" placeholder="what would you like to do?" class="user-to-do error" id="userValue">
+                <input type="submit" value="+" class="submit-button">
+            </div>
+            <div class="todo-colors">
+                <span class="important">
+                    ! = something important
+                </span>
+                <span class="uncertain">
+                    ? = not sure about that
+                </span>
+                <span class="optional">
+                    . = additional task
+                </span>
+                <span class="normal">
+                    * = normal task
+                </span>
+            </div>
         </form>
         <div class="todos">
             <ul>
                 <li>
                     <div class="todo">
-                        Say hi to admin
-                        <button>X</button>
+                        <span class="optional">. say hi to admin</span> 
                     </div>
+                    <button>X</button>
                 </li>
                 <li>
                     <div class="todo">
-                        Pet the dog and cat
-                        <button>X</button>
+                        <span class="important">! pet the dog and cat</span>
                     </div>
+                     <button>X</button>
                 </li>
                 <li>
                     <div class="todo">
-                        buy milk
-                        <button>X</button>
+                        <span class="normal">* code</span>
                     </div>
+                    <button>X</button>
+                </li>
+                <li>
+                   <div class="todo">
+                        <span class="optional">. buy milk</span> 
+                   </div>
+                    <button>X</button>
                 </li>
                 <li>
                     <div class="todo">
-                        code
-                        <button>X</button>
+                         <span class="uncertain">? go to the gym</span> 
                     </div>
-                </li>
+                     <button>X</button>
+                 </li>
             </ul>
         </div>
     </div>

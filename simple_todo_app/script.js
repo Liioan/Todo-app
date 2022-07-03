@@ -1,13 +1,13 @@
 const form = document.querySelector('form');
 const userToDo = document.querySelector('.user-to-do');
 const ul = document.querySelector('ul');
-const pattern = /^[a-zA-z0-9_.,*+-/\sąęćśżźóńł'")(;]{1,}$/;
+const pattern = /^.{1,}$/;
 
 //* removes targeted li, adds hidden class if ul is empty
 ul.addEventListener('click', e => {
     //* checks if delete acction was triggered 
     if(e.target.tagName === 'BUTTON'){
-        e.target.parentElement.parentElement.remove();
+        e.target.parentElement.remove();
     }
 
     //*checs if ul is empty 
@@ -27,11 +27,32 @@ form.addEventListener('submit', e => {
     //* tests if value is empty
     let result = pattern.test(userToDo.value);
     // console.log(result);
+
     if(result){
-        ul.innerHTML += `<li><div class ="todo">${userToDo.value}<button>X</button></div></li>`;
+        //* checks if user used color for li
+        const important = /[!]/;
+        const uncertain = /[?]/;
+        const optional = /[.]/;
+        const normal = /[*]/;
+        let usedColor = ``;
+        
+        if(important.test(userToDo.value)){
+            usedColor = `<span class="important">`;
+        } else if(uncertain.test(userToDo.value)){
+            usedColor = `<span class="uncertain">`;
+        } else if(optional.test(userToDo.value)){
+            usedColor = `<span class="optional">`;
+        } else if(normal.test(userToDo.value)){
+            usedColor = `<span class="normal">`;
+        } else {
+            usedColor = `<span>`;
+        }
+        console.log(usedColor);
+        
+        
+        //* adds li
+        ul.innerHTML += `<li><div class ="todo">${usedColor}${userToDo.value}</span></div><button>X</button></li>`;
         ul.classList.remove('hidden');
-    } else {
-       alert('error: incorrect value \ntype in correct value');
     }
 
     //* clears input field
@@ -44,17 +65,17 @@ form.addEventListener('submit', e => {
 });
 
 //* live feedback
-form.userValue.addEventListener('keyup', e => {
+userToDo.addEventListener('keyup', () => {
     //* tests user value 
     let result = pattern.test(userToDo.value);
     // console.log(result);
 
     //* adds classes for feedback
     if(result){
-        form.userValue.classList.remove('error');
-        form.userValue.classList.add('valid');
+        userToDo.classList.remove('error');
+        userToDo.classList.add('valid');
     } else {
-        form.userValue.classList.remove('valid');
-        form.userValue.classList.add('error');
+        userToDo.classList.remove('valid');
+        userToDo.classList.add('error');
     }
 });
