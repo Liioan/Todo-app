@@ -1,6 +1,7 @@
 const form = document.querySelector('form');
 const userToDo = document.querySelector('.user-to-do');
 const ul = document.querySelector('ul');
+const clearAllButton = document.querySelector('.clear-all');
 const pattern = /^.{1,}$/;
 
 //* removes targeted li, adds hidden class if ul is empty
@@ -15,6 +16,7 @@ ul.addEventListener('click', e => {
     let liArr = Array.from(li);
     if(liArr.length === 0){
         ul.classList.add('hidden');
+        clearAllButton.classList.add('hidden');
     }
     // console.log(liArr)
 });
@@ -47,12 +49,15 @@ form.addEventListener('submit', e => {
         } else {
             usedColor = `<span>`;
         }
-        //console.log(usedColor);
+        // console.log(usedColor);
         
         
         //* adds li
-        ul.innerHTML += `<li><div class ="todo">${usedColor}${userToDo.value}</span></div><button>X</button></li>`;
+        ul.innerHTML += `<li><div class ="todo">${usedColor}${userToDo.value}</span></div><button class="delete-button">X</button></li>`;
+
+        //* shows li and clear-all button
         ul.classList.remove('hidden');
+        clearAllButton.classList.remove('hidden');
     }
 
     //* clears input field
@@ -61,7 +66,6 @@ form.addEventListener('submit', e => {
     //* clears classes 
     form.userValue.classList.remove('error');
     form.userValue.classList.remove('valid');
-    
 });
 
 //* live feedback
@@ -78,4 +82,16 @@ userToDo.addEventListener('keyup', () => {
         userToDo.classList.remove('valid');
         userToDo.classList.add('error');
     }
+});
+
+//* deletes all li tags if button is pressed
+clearAllButton.addEventListener('click', e => {
+    const items = document.querySelectorAll('li');
+    items.forEach(item => {
+        item.remove();
+    })
+
+    //* hides ul and button itself
+    ul.classList.add('hidden');
+    clearAllButton.classList.add('hidden');
 });

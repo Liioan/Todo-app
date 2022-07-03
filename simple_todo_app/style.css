@@ -2,7 +2,7 @@
 *{
     transition: all 0.2s ease-in-out;
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: #ffffff;
 }
 
 body{
@@ -48,19 +48,19 @@ form{
 }
 
 .important{
-    color: red;
+    color: #ff0000;
 }
 
 .uncertain{
-    color: cyan;
+    color: #00ffff;
 }
 
 .optional{
-    color: orange;
+    color: #ffa500;
 }
 
 .normal{
-    color: limegreen;
+    color: #32cd32;
 }
 
 .user-to-do{
@@ -68,9 +68,9 @@ form{
     text-align: center;
     height: 5vh;
     background-color: #333333;
-    border: 2px white solid;
+    border: 2px #ffffff solid;
     border-radius: 20px;
-    color: white;
+    color: #ffffff;
     font-weight: 700;
     font-size: 20px;
 }
@@ -83,17 +83,17 @@ form{
     width: 5vh;
     height: 5vh;
     background-color: #333333;
-    border: 2px white solid;
+    border: 2px #ffffff solid;
     border-radius: 100px;
-    color: white;
+    color: #ffffff;
     font-weight: 700;
     font-size: 20px;
 }
 
 .submit-button:hover{
     cursor: pointer;
-    border-color: aquamarine;
-    color: aquamarine;
+    border-color: #00ff00;
+    color: #00ff00;
 }
 
 
@@ -122,33 +122,49 @@ li{
 }
 
 
-button{
+.delete-button{
     margin: 5px;
     width: 30px;
     height: 30px;   
     border-radius: 100px; 
     background-color: #333333;
     border: none;
-    color: white;
+    color: #ffffff;
     cursor: pointer;
     font-weight: 700;
 }
 
-button:hover{
-    color: crimson;
-    border: 1px crimson solid;
+.delete-button:hover{
+    color: #dc143c;
+    border: 1px #dc143c solid;
+}
+
+.clear-all{
+    width: 40vw;
+    background-color: #333333;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid #333333;
+}
+
+.clear-all:hover{
+    border: 1px #dc143c solid;
+    color: #ff0000;
 }
 
 .valid:focus{
-    border-color:limegreen;
+    border-color:#32cd32;
     background-color: #272e25;
-    color: limegreen;
+    color: #32cd32;
 }
 
 .error:focus{
-    border-color: crimson;
+    border-color: #dc143c;
     background-color: #2e2525;
-    color: crimson;
+    color: #dc143c;
 }
 
 .hidden{
