@@ -47,7 +47,7 @@ form.addEventListener('submit', e => {
         } else {
             usedColor = `<span>`;
         }
-        console.log(usedColor);
+        //console.log(usedColor);
         
         
         //* adds li
