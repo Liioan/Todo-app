@@ -1,4 +1,5 @@
-const form = document.querySelector('form');
+const formAdd = document.querySelector('.add');
+const searchInput = document.querySelector('.search-input');
 const userToDo = document.querySelector('.user-to-do');
 const ul = document.querySelector('ul');
 const clearAllButton = document.querySelector('.clear-all');
@@ -22,12 +23,12 @@ ul.addEventListener('click', e => {
 });
 
 //* adds new li element, removes hidden class
-form.addEventListener('submit', e => {
+formAdd.addEventListener('submit', e => {
     e.preventDefault();
-    // console.log(userToDo.value.length)
+    const todo = userToDo.value.trim();
 
     //* tests if value is empty
-    let result = pattern.test(userToDo.value);
+    let result = pattern.test(todo);
     // console.log(result);
 
     if(result){
@@ -38,13 +39,13 @@ form.addEventListener('submit', e => {
         const normal = /[*]/;
         let usedColor = ``;
         
-        if(important.test(userToDo.value)){
+        if(important.test(todo)){
             usedColor = `<span class="important">`;
-        } else if(uncertain.test(userToDo.value)){
+        } else if(uncertain.test(todo)){
             usedColor = `<span class="uncertain">`;
-        } else if(optional.test(userToDo.value)){
+        } else if(optional.test(todo)){
             usedColor = `<span class="optional">`;
-        } else if(normal.test(userToDo.value)){
+        } else if(normal.test(todo)){
             usedColor = `<span class="normal">`;
         } else {
             usedColor = `<span>`;
@@ -53,7 +54,7 @@ form.addEventListener('submit', e => {
         
         
         //* adds li
-        ul.innerHTML += `<li><div class ="todo">${usedColor}${userToDo.value}</span></div><button class="delete-button">X</button></li>`;
+        ul.innerHTML += `<li><div class ="todo">${usedColor}${todo}</span></div><button class="delete-button">X</button></li>`;
 
         //* shows li and clear-all button
         ul.classList.remove('hidden');
@@ -61,17 +62,18 @@ form.addEventListener('submit', e => {
     }
 
     //* clears input field
-    userToDo.value = '';
+    formAdd.reset();
 
     //* clears classes 
-    form.userValue.classList.remove('error');
-    form.userValue.classList.remove('valid');
+    formAdd.userValue.classList.remove('error');
+    formAdd.userValue.classList.remove('valid');
 });
 
 //* live feedback
 userToDo.addEventListener('keyup', () => {
     //* tests user value 
-    let result = pattern.test(userToDo.value);
+    const todo = userToDo.value.trim();
+    let result = pattern.test(todo);
     // console.log(result);
 
     //* adds classes for feedback
@@ -85,7 +87,7 @@ userToDo.addEventListener('keyup', () => {
 });
 
 //* deletes all li tags if button is pressed
-clearAllButton.addEventListener('click', e => {
+clearAllButton.addEventListener('click', () => {
     const items = document.querySelectorAll('li');
     items.forEach(item => {
         item.remove();
@@ -94,4 +96,21 @@ clearAllButton.addEventListener('click', e => {
     //* hides ul and button itself
     ul.classList.add('hidden');
     clearAllButton.classList.add('hidden');
+});
+
+//* search for todos
+
+const filterTodos = (term) => {
+    Array.from(ul.children)
+        .filter(todo => !todo.textContent.toLowerCase().includes(term))
+        .forEach(todo => todo.classList.add('hidden'));
+
+        Array.from(ul.children)
+        .filter(todo => todo.textContent.toLowerCase().includes(term))
+        .forEach(todo => todo.classList.remove('hidden'));
+}
+
+searchInput.addEventListener('keyup', () => {
+   const term = searchInput.value.trim().toLowerCase(); 
+   filterTodos(term);
 });
