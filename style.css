@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+*{
+    transition: all 0.2s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+body{
+    transition: all 0.2s ease-in-out;
+    background-color: #222222;
+    height: auto;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.add{
+    background-color: #333333;
+    width: 40vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+}
+
+.search{
+    background-color: #333333;
+    width: 40vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.inputs{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.todo-colors{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    background-color: #444444;
+    border-radius: 100px;
+}
+
+.important{
+    color: #ff0000;
+}
+
+.uncertain{
+    color: #00ffff;
+}
+
+.optional{
+    color: #ffa500;
+}
+
+.normal{
+    color: #32cd32;
+}
+
+.user-to-do{
+    width: 30vw;
+    text-align: center;
+    height: 5vh;
+    background-color: #333333;
+    border: 2px #ffffff solid;
+    border-radius: 20px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.search-input{
+    width: 35vw;
+    text-align: center;
+    height: 2vh;
+    background-color: #333333;
+    border: 2px #ffffff solid;
+    border-radius: 20px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.user-to-do:focus, .search-input:focus{
+    outline: none; 
+}
+
+.submit-button{
+    width: 5vh;
+    height: 5vh;
+    background-color: #333333;
+    border: 2px #ffffff solid;
+    border-radius: 100px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.submit-button:hover{
+    cursor: pointer;
+    border-color: #00ff00;
+    color: #00ff00;
+}
+
+
+
+.todos{
+    background-color: #333333;
+    width: 40vw;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    margin: 10px;
+    padding: 10px;
+    background-color: #444444;
+    list-style-type: none;
+    border-radius: 15px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.delete-button{
+    margin: 5px;
+    width: 30px;
+    height: 30px;   
+    border-radius: 100px; 
+    background-color: #333333;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.delete-button:hover{
+    color: #dc143c;
+    border: 1px #dc143c solid;
+}
+
+.clear-all{
+    width: 40vw;
+    background-color: #333333;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid #333333;
+}
+
+.clear-all:hover{
+    border: 1px #dc143c solid;
+    color: #ff0000;
+}
+
+.valid:focus{
+    border-color:#32cd32;
+    background-color: #272e25;
+    color: #32cd32;
+}
+
+.error:focus{
+    border-color: #dc143c;
+    background-color: #2e2525;
+    color: #dc143c;
+}
+
+.hidden{
+    display: none;
+}
+
+.visable{
+    display: block;
+}

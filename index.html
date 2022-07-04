@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple to do</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form class="add">
+            <div class="inputs">
+                <input type="text" placeholder="what would you like to do?" class="user-to-do error" id="userValue">
+                <input type="submit" value="+" class="submit-button">
+            </div>
+            <div class="todo-colors">
+                <span class="important">
+                    !  something important
+                </span>
+                <span class="uncertain">
+                    ?  not sure about that
+                </span>
+                <span class="optional">
+                    .  additional task
+                </span>
+                <span class="normal">
+                    *  normal task
+                </span>
+            </div>
+        </form>
+        <form class="search">
+            <input type="text" placeholder="search todos" class="search-input">
+        </form>
+        <div class="todos">
+            <ul>
+                <li>
+                    <div class="todo">
+                        <span class="optional">. say hi to admin</span> 
+                    </div>
+                    <button class="delete-button">X</button>
+                </li>
+                <li>
+                    <div class="todo">
+                        <span class="important">! pet the dog and cat</span>
+                    </div>
+                     <button class="delete-button">X</button>
+                </li>
+                <li>
+                    <div class="todo">
+                        <span class="normal">* code</span>
+                    </div>
+                    <button class="delete-button">X</button>
+                </li>
+                <li>
+                   <div class="todo">
+                        <span class="optional">. buy milk</span> 
+                   </div>
+                    <button class="delete-button">X</button>
+                </li>
+                <li>
+                    <div class="todo">
+                         <span class="uncertain">? go to the gym</span> 
+                    </div>
+                     <button class="delete-button">X</button>
+                 </li>
+            </ul>
+        </div>
+        <button class="clear-all">clear all</button>   
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
