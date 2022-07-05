@@ -105,7 +105,7 @@ const filterTodos = (term) => {
         .filter(todo => !todo.textContent.toLowerCase().includes(term))
         .forEach(todo => todo.classList.add('hidden'));
 
-        Array.from(ul.children)
+    Array.from(ul.children)
         .filter(todo => todo.textContent.toLowerCase().includes(term))
         .forEach(todo => todo.classList.remove('hidden'));
 }
@@ -113,4 +113,11 @@ const filterTodos = (term) => {
 searchInput.addEventListener('keyup', () => {
    const term = searchInput.value.trim().toLowerCase(); 
    filterTodos(term);
+    
+   //* hides clear all button while serching for todo
+   if(term.length){
+    clearAllButton.classList.add('hidden');
+   } else {
+    clearAllButton.classList.remove('hidden');
+   }
 });
