@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo app</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form class="add">
+            <div class="inputs">
+                <input type="text" placeholder="what would you like to do?" class="user-to-do error" id="userValue">
+                <input type="submit" value="+" class="submit-button">
+            </div>
+            <input type="text" placeholder="search todos" class="search-input" id="search">
+            <div class="todo-colors">
+                <span class="important">
+                    ! = task color  
+                </span>
+                <span class="uncertain">
+                    ? = task color  
+                </span>
+                <span class="optional">
+                    . = task color  
+                </span>
+                <span class="normal">
+                    * = task color  
+                </span>
+            </div>
+        </form>
+        <div class="todos">
+            <ul>
+            </ul>
+        </div>
+        <button class="clear-all">clear all</button>   
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
