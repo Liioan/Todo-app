@@ -1,6 +1,6 @@
 const form = document.querySelector('.add');
 const ul = document.querySelector('ul');
-const pattern = /.{1,}/;
+const pattern = /^.{1,52}$/;
 const clearAllButton = document.querySelector('.clear-all');
 
 
